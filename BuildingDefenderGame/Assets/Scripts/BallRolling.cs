@@ -46,39 +46,17 @@ public class BallRolling : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Destroy(gameObject);
-        StartCoroutine(FlashlightEffect());
+        FlashlightEffect();
     }
 
     public SpriteRenderer flashlightSprite; // ¼¶±¤ ½ºÇÁ¶óÀÌÆ®
     public float flashlightRadius = 5f; // ¼¶±¤ÀÇ ¹ÝÁö¸§
-    public float flashlightDuration = 1f; // ¼¶±¤ Áö¼Ó ½Ã°£
 
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePosition.z = 0f;
-
-           
-
-
-        }
-    }
-
-    private System.Collections.IEnumerator FlashlightEffect()
+    void FlashlightEffect()
     {
         flashlightSprite.transform.position = new Vector3(0,0,0);
-        flashlightSprite.enabled = true;
-
-        Debug.Log("1"+flashlightSprite.enabled);
-
-        yield return new WaitForSeconds(flashlightDuration);
-
        
-
-        flashlightSprite.enabled = false;
-        Debug.Log("2" + flashlightSprite.enabled);
+        flashlightSprite.gameObject.SetActive(true);
 
     }
 }

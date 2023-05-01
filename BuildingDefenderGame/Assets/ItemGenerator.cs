@@ -24,11 +24,9 @@ public class ItemGenerator : MonoBehaviour
 
     private void Start()
     {
-        randText.text = "뽑기!, 5개 중 뽑기 사용 횟수는 : " + clickCount;
+        randText.text = "5개 중 뽑기 사용 횟수는 : " + clickCount;
         yourText.gameObject.SetActive(false);
         generateButton.onClick.AddListener(GenerateItems);
-
-        //UpdateButtonInteractable();
     }
 
     private void Update()
@@ -47,8 +45,6 @@ public class ItemGenerator : MonoBehaviour
         if (Time.time >= 10f)
         {
             canPressButton = true;
-           // UpdateButtonInteractable();
-            TimeReset();
         }
 
         if (clickCount == 5)
@@ -71,7 +67,6 @@ public class ItemGenerator : MonoBehaviour
         clickCount++;
 
         // 버튼 동작 코드
-        Debug.Log(clickCount);
 
         // 버튼 클릭 후 버튼 상태 업데이트
         UpdateButtonInteractable2();
@@ -98,9 +93,6 @@ public class ItemGenerator : MonoBehaviour
             ChangeText("배속을 동반해 10초 동안 보호막이 활성화됩니다!");
 
         }
-
-
-
     }
 
     void ChangeText(string newText)
@@ -108,40 +100,10 @@ public class ItemGenerator : MonoBehaviour
         yourText.text = newText;
     }
 
-
-    //// 버튼 클릭 시 실행될 함수
-    //public void OnButtonClick()
-    //{
-    //    if (canPressButton)
-    //    {
-    //        // 버튼 동작 코드
-    //        Debug.Log("Button Clicked!");
-
-    //        // 버튼 클릭 후 버튼 상태 업데이트
-    //        canPressButton = false;
-    //        UpdateButtonInteractable();
-    //    }
-    //}
-
-    //// 버튼 상태를 업데이트하는 함수
-    //void UpdateButtonInteractable()
-    //{
-    //    generateButton.interactable = canPressButton;
-    //}
-
-    // 시간 리셋
-    void TimeReset()
-    {
-    }
     void UpdateButtonInteractable2()
     {
-        
-
         generateButton.interactable = clickCount < maxClickCount;
         randText.text = "5개 중 뽑기 사용 횟수는 : " + clickCount;
-
-      
-       
     }
 }
 

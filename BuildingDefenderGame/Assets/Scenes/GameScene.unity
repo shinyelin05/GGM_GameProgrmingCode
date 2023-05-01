@@ -5323,7 +5323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &668210508
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12634,7 +12634,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1520525612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12651,7 +12651,6 @@ MonoBehaviour:
   buildingTransform: {fileID: 1382249115}
   flashlightSprite: {fileID: 668210508}
   flashlightRadius: 5
-  flashlightDuration: 0.5
 --- !u!212 &1520525613
 SpriteRenderer:
   m_ObjectHideFlags: 0
